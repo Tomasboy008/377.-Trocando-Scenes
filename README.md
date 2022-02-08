@@ -11,11 +11,11 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class Wizard extends Application {
-	private Stage janela;
-	private Scene passo1;
-	private Scene passo2;
-	private Scene passo3;
+	public class Wizard extends Application {
+		private Stage janela;
+		private Scene passo1;
+		private Scene passo2;
+		private Scene passo3;
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		janela = primaryStage;
@@ -26,8 +26,12 @@ public class Wizard extends Application {
 		janela.setTitle("Wizard");
 		janela.show();
 	}	
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
 	private void criarPasso1() {
-		Button proximoPasso = new Button ("Ir p; Passo 2 >>");
+		Button proximoPasso = new Button ("Ir p/ Passo 2 >>");
 		proximoPasso.setOnAction(e -> {
 			janela.setScene(passo2);
 		});	
@@ -42,7 +46,7 @@ public class Wizard extends Application {
 		passoAnterior.setOnAction(e -> {
 			janela.setScene(passo1);
 		});
-		Button proximoPasso = new Button ("Ir p; Passo 3 >>");
+		Button proximoPasso = new Button ("Ir p/ Passo 3 >>");
 		proximoPasso.setOnAction(e -> {
 			janela.setScene(passo3);
 		});	
@@ -70,3 +74,5 @@ public class Wizard extends Application {
 		passo3 = new Scene(box, 400, 400);
 	}
 }
+
+![image](https://user-images.githubusercontent.com/95525963/152900387-e89e9f98-a886-441c-8adb-053a3be64542.png)
